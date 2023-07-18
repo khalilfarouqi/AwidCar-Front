@@ -9,6 +9,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ClientComponent } from './client/client.component';
+import { OrderComponent } from './order/order.component';
+import { CarComponent } from './car/car.component';
+import { NotificationComponent } from './notification/notification.component';
+import { UserComponent } from './user/user.component';
+import { SettingComponent } from './setting/setting.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,11 +23,17 @@ import { ClientComponent } from './client/client.component';
     SidebarComponent,
     HomeComponent,
     FooterComponent,
-    ClientComponent
+    ClientComponent,
+    OrderComponent,
+    CarComponent,
+    NotificationComponent,
+    UserComponent,
+    SettingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],

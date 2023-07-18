@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { NavbarComponent } from './navbar/navbar.component'
 import { HomeComponent } from './home/home.component';
+import { CarComponent } from './car/car.component';
+import { ClientComponent } from './client/client.component';
+import { NotificationComponent } from './notification/notification.component';
+import { UserComponent } from './user/user.component';
+import { OrderComponent } from './order/order.component';
+import { SettingComponent } from './setting/setting.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
-  {path: "", component: SidebarComponent},
+  {path: "car", component: CarComponent},
+  {path: "client", component: ClientComponent},
+  {path: "order", component: OrderComponent},
+  {path: "notification", component: NotificationComponent},
+  {path: "user", component: UserComponent},
+  {path: "setting", component: SettingComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
