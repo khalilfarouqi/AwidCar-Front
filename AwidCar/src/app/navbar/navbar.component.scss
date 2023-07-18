@@ -1,5 +1,5 @@
 /* Googlefont Poppins CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200%3B300%3B400%3B600%3B700&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -71,14 +71,6 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-}
-.home-section{
-  position: relative;
-  background: #f5f5f5;
-  min-height: 100vh;
-  width: calc(100% - 240px);
-  left: 240px;
-  transition: all 0.5s ease;
 }
 .sidebar.active ~ .home-section{
   width: calc(100% - 60px);
