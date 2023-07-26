@@ -1,5 +1,5 @@
 export enum Gender {
-    MONSIEUR,
-    MADAME,
-    MADEMOISELLE
+    MONSIEUR = 'MONSIEUR',
+    MADAME = 'MADAME',
+    MADEMOISELLE = 'MADEMOISELLE'
 }

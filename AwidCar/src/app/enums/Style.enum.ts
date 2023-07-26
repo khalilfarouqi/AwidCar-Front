@@ -1,9 +1,9 @@
 export enum Style {
-    SEDAN,
-    COUPE,
-    HATCHBACK,
-    SUV,
-    VAN,
-    PICKUP,
-    WAGON
+    COUPE = 'COUPE',
+    HATCHBACK = 'HATCHBACK',
+    PICKUP = 'PICKUP',
+    SEDAN = 'SEDAN',
+    SUV = 'SUV',
+    VAN = 'VAN',
+    WAGON = 'WAGON'
 }

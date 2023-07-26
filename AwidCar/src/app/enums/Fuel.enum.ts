@@ -1,5 +1,5 @@
 export enum Fuel {
-    DIESEL,
-    ESSENCE,
-    HYBRIDE
+    DIESEL = 'DIESEL',
+    ESSENCE = 'ESSENCE',
+    HYBRIDE = 'HYBRIDE'
 }
