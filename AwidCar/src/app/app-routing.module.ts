@@ -7,6 +7,7 @@ import { ClientComponent } from './client/client.component';
 import { NotificationComponent } from './notification/notification.component';
 import { UserComponent } from './user/user.component';
 import { OrderComponent } from './order/order.component';
+import { CarEditeurComponent } from './car-editeur/car-editeur.component';
 import { SettingComponent } from './setting/setting.component';
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: "order", component: OrderComponent},
   {path: "notification", component: NotificationComponent},
   {path: "user", component: UserComponent},
-  {path: "setting", component: SettingComponent}
+  {path: "setting", component: SettingComponent},
+  {path: "carEditeur", component: CarEditeurComponent}
 ];
 
 @NgModule({

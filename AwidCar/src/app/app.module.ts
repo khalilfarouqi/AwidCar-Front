@@ -15,6 +15,12 @@ import { NotificationComponent } from './notification/notification.component';
 import { UserComponent } from './user/user.component';
 import { SettingComponent } from './setting/setting.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatInputModule} from '@angular/material/input';
+import {NgFor} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { CarEditeurComponent } from './car-editeur/car-editeur.component';
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [
@@ -28,13 +34,19 @@ import { HttpClientModule } from '@angular/common/http';
     CarComponent,
     NotificationComponent,
     UserComponent,
-    SettingComponent
+    SettingComponent,
+    CarEditeurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    NgFor,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
