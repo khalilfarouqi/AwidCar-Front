@@ -5,7 +5,7 @@ import { Style } from "../enums/Style.enum";
 
 export interface Car {
     id?: number;
-	Name: string;
+	name: string;
 	Brande: Brande;
 	Matricule: string;
 	Mileage: number;
