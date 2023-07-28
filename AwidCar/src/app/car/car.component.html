@@ -6,57 +6,33 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">Brand</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.Brande}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.brande}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Name</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.Name}}</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Color</li>
-                        <li *ngFor="let car of cars"><a href="#">XXXXXXX</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.name}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Fuel</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.fuel}}</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Power</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.HorsPower}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.fuel}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Gearbox</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.gearBox}}</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Consomation</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.Consumption}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.gearBox}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Doors</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.Door}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.door}}</a></li>
                     </ul>
                     <ul class="details">
-                        <li class="topic">Seats</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.Seat}}</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Bluetooth</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.Bluetooth}}</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">AirConditione</li>
-                        <li *ngFor="let car of cars"><a href="#">{{car.AirBag}}</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Description</li>
-                        <li *ngFor="let car of cars"><a href="#">XXXXXXX</a></li>
+                        <li class="topic">Models</li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.model}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Actions</li>
                         <li *ngFor="let car of cars">
                             <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-pen"></i></a>
-                            <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-trash"></i></a>
+                            <a (click)="DeleteCar(car.id)" style="margin: 0px 5px 0px 5px;"><i class="bi bi-trash"></i></a>
                         </li>
                     </ul>
                 </div>

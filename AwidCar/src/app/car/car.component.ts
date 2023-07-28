@@ -20,11 +20,24 @@ export class CarComponent implements OnInit {
   }
 
   public getCar(){
-    this.carService.getAllCar()
-    .subscribe((result) => {
-      this.cars = result;
-      console.log(result)
+    this.carService.getAllCar().subscribe((result) => { 
+      this.cars = result; 
+      console.log(result) 
     })
+  }
+
+  public getCarById(id :number){
+    this.carService.getCarById(id).subscribe((result) => { 
+      this.cars = result; 
+      console.log(result) 
+    })
+  }
+
+  DeleteCar(id :number){
+    this.carService.deleteCar(id)
+        .subscribe(data =>{console.log(data);
+    })
+    this.getCar();
   }
 
 }
