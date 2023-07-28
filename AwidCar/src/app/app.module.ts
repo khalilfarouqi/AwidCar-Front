@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule  } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,7 +20,10 @@ import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CarEditeurComponent } from './car-editeur/car-editeur.component';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { CarDetailsComponent } from './car-details/car-details.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     NotificationComponent,
     UserComponent,
     SettingComponent,
-    CarEditeurComponent
+    CarEditeurComponent,
+    CarDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox'
     NgFor,
     MatSelectModule,
     MatFormFieldModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

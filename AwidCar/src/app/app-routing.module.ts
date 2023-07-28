@@ -9,6 +9,7 @@ import { UserComponent } from './user/user.component';
 import { OrderComponent } from './order/order.component';
 import { CarEditeurComponent } from './car-editeur/car-editeur.component';
 import { SettingComponent } from './setting/setting.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: "notification", component: NotificationComponent},
   {path: "user", component: UserComponent},
   {path: "setting", component: SettingComponent},
-  {path: "carEditeur", component: CarEditeurComponent}
+  {path: "carEditeur", component: CarEditeurComponent},
+  {path: "carDetails", component: CarDetailsComponent}
 ];
 
 @NgModule({
