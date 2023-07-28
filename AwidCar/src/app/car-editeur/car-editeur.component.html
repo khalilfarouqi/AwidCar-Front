@@ -3,138 +3,146 @@
         <div class="sales-boxes">
             <div class="recent-sales box">
                 <div class="title">Cars Editeur</div>
-                <div class="sales-details">
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Name</mat-label>
-                            <input matInput placeholder="Name">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Matricule</mat-label>
-                            <input matInput placeholder="Matricule">
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="sales-details">
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Mileage</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Model</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>HorsPower</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="sales-details">
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>bootSize</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Price</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Rate</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="sales-details">
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Consumption</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Seat</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                    <form class="example-form">
-                        <mat-form-field class="example-full-width">
-                            <mat-label>Door</mat-label>
-                            <input matInput type="number">
-                        </mat-form-field>
-                    </form>
-                </div>
-                <div class="sales-details" style="margin-bottom: 1%;">
-                    <section class="example-section">
-                        <mat-checkbox class="example-margin">Bluetooth</mat-checkbox>
-                    </section>
-                    <section class="example-section">
-                        <mat-checkbox class="example-margin">AirBag</mat-checkbox>
-                    </section>
-                    <section class="example-section">
-                        <mat-checkbox class="example-margin">CDM</mat-checkbox>
-                    </section>
-                    <section class="example-section">
-                        <mat-checkbox class="example-margin">Protection Vol</mat-checkbox>
-                    </section>
-                    <section class="example-section">
-                        <mat-checkbox class="example-margin">Respo Civile</mat-checkbox>
-                    </section>
-                    <section class="example-section">
-                        <mat-checkbox class="example-margin">Bris Glace Pneus</mat-checkbox>
-                    </section>
-                </div>
-                <div class="sales-details" style="margin-bottom: 1%;">
-                    <ul class="details">
-                        <p>Brande</p>
-                        <mat-form-field>
-                            <select matNativeControl required>
-                                <option *ngFor="let brande of brandes" [value]="brande">{{ brande }}</option>
-                            </select>
-                        </mat-form-field>
-                    </ul>
-                    <ul class="details">
-                        <p>GearBox</p>
-                        <mat-form-field>
-                            <select matNativeControl required>
-                                <option *ngFor="let gearbox of gearboxs" [value]="gearbox">{{ gearbox }}</option>
-                            </select>
-                        </mat-form-field>
-                    </ul>
-                    <ul class="details">
-                        <p>Fuel</p>
-                        <mat-form-field>
-                            <select matNativeControl required>
-                                <option *ngFor="let fuel of fuels" [value]="fuel">{{ fuel }}</option>
-                            </select>
-                        </mat-form-field>
-                    </ul>
-                    <ul class="details">
-                        <p>Style</p>
-                        <mat-form-field>
-                            <select matNativeControl required>
-                                <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
-                            </select>
-                        </mat-form-field>
-                    </ul>
-                </div>
-                <div class="button">
-                    <a routerLink="/car" routerLinkActive="active" style="background: #da1818;">Cancel</a>
-                    <a routerLink="/car" routerLinkActive="active">Save</a>
-                </div>
+                <form #myForm="ngForm" (ngSubmit)="onFormSubmit()">
+                    <div class="sales-details">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Name</mat-label>
+                                <input matInput placeholder="Name" [(ngModel)]="formData.name">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width-immatriculation">
+                                <mat-label>immatriculation</mat-label>
+                                <input matInput placeholder="1236" type="number">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width-immatriculation">
+                                <mat-label>immatriculation</mat-label>
+                                <input matInput placeholder="A">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width-immatriculation">
+                                <mat-label>immatriculation</mat-label>
+                                <input matInput placeholder="33" type="number">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="sales-details">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Mileage</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.Mileage">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Model</mat-label>
+                                <input matInput type="number" min="2010" max="2050" [(ngModel)]="formData.Model"/>
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>HorsPower</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.HorsPower">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="sales-details">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>bootSize</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.bootSize">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Price</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.Price">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="sales-details">
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Consumption</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.Consumption">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Seat</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.Seat">
+                            </mat-form-field>
+                        </form>
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Door</mat-label>
+                                <input matInput type="number" [(ngModel)]="formData.Door">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <div class="sales-details" style="margin-bottom: 1%;">
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" [(ngModel)]="formData.Bluetooth">Bluetooth</mat-checkbox>
+                        </section>
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" [(ngModel)]="formData.AirBag">AirBag</mat-checkbox>
+                        </section>
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" [(ngModel)]="formData.CDM">CDM</mat-checkbox>
+                        </section>
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" [(ngModel)]="formData.ProtectionVol">Protection Vol</mat-checkbox>
+                        </section>
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" [(ngModel)]="formData.RespoCivile">Respo Civile</mat-checkbox>
+                        </section>
+                        <section class="example-section">
+                            <mat-checkbox class="example-margin" [(ngModel)]="formData.BrisGlacePneus">Bris Glace Pneus</mat-checkbox>
+                        </section>
+                    </div>
+                    <div class="sales-details" style="margin-bottom: 1%;">
+                        <ul class="details">
+                            <p>Brande</p>
+                            <mat-form-field>
+                                <select matNativeControl required [(ngModel)]="formData.Brande">
+                                    <option *ngFor="let brande of brandes" [value]="brande">{{ brande }}</option>
+                                </select>
+                            </mat-form-field>
+                        </ul>
+                        <ul class="details">
+                            <p>GearBox</p>
+                            <mat-form-field>
+                                <select matNativeControl required [(ngModel)]="formData.gearBox">
+                                    <option *ngFor="let gearbox of gearboxs" [value]="gearbox">{{ gearbox }}</option>
+                                </select>
+                            </mat-form-field>
+                        </ul>
+                        <ul class="details">
+                            <p>Fuel</p>
+                            <mat-form-field>
+                                <select matNativeControl required [(ngModel)]="formData.fuel">
+                                    <option *ngFor="let fuel of fuels" [value]="fuel">{{ fuel }}</option>
+                                </select>
+                            </mat-form-field>
+                        </ul>
+                        <ul class="details">
+                            <p>Style</p>
+                            <mat-form-field>
+                                <select matNativeControl required [(ngModel)]="formData.Style">
+                                    <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+                                </select>
+                            </mat-form-field>
+                        </ul>
+                    </div>
+                    <div class="button">
+                        <a routerLink="/car" routerLinkActive="active" style="background: #da1818;">Cancel</a>
+                        <a (click)="MethodePost()" routerLinkActive="active">Save</a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
