@@ -24,6 +24,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CarDetailsComponent } from './car-details/car-details.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CarDetailsComponent } from './car-details/car-details.component';
     UserComponent,
     SettingComponent,
     CarEditeurComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
