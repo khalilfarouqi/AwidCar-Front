@@ -18,13 +18,12 @@ export class HomeComponent implements OnInit {
     private clientService: ClientService) { }
 
   ngOnInit(): void {
-    //this.getClient();
     this.getOrder();
+    this.getClient();
   }
 
   public getClient(){
-    this.clientService.getAllClient()
-    .subscribe((result) => {
+    this.clientService.getAllClient().subscribe((result) => {
       this.clients = result;
       console.log(result)
     })
