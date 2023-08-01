@@ -6,27 +6,27 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">Brand</li>
-                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.brande}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails/{{car.id}}">{{car.brande}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Name</li>
-                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.name}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails/{{car.id}}">{{car.name}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Fuel</li>
-                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.fuel}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails/{{car.id}}">{{car.fuel}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Gearbox</li>
-                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.gearBox}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails/{{car.id}}">{{car.gearBox}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Doors</li>
-                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.door}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails/{{car.id}}">{{car.door}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Models</li>
-                        <li *ngFor="let car of cars"><a routerLink="/carDetails">{{car.model}}</a></li>
+                        <li *ngFor="let car of cars"><a routerLink="/carDetails/{{car.id}}">{{car.model}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Actions</li>
