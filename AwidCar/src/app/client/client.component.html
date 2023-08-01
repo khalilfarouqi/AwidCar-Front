@@ -6,35 +6,35 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">Full Name</li>
-                        <li><a href="#">client.fullName</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{ client.firstName }} {{ client.lastName }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">CIN</li>
-                        <li><a href="#">client.cin</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{ client.cin }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Licence</li>
-                        <li><a href="#">client.licence</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{client.licence}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Phone Number</li>
-                        <li><a href="#">client.phoneNumber</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{client.tel}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Age</li>
-                        <li><a href="#">client.age</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{client.age}}</a></li>
                     </ul>
                     <ul class="details">
-                        <li class="topic">Sexe</li>
-                        <li><a href="#">client.sexe</a></li>
+                        <li class="topic">Gender</li>
+                        <li *ngFor="let client of clients"><a href="">{{client.gender}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">City</li>
-                        <li><a href="#">client.city</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{client.city}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Email</li>
-                        <li><a href="#">client.phoneNumber</a></li>
+                        <li *ngFor="let client of clients"><a href="">{{client.email}}</a></li>
                     </ul>
                 </div>
             </div>
