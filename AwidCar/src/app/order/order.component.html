@@ -6,35 +6,35 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">Client</li>
-                        <li><a href="#">order.client.fullName</a></li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.client.firstName}} {{order.client.lastName}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Car</li>
-                        <li><a href="#">order.car.name</a></li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.car.name}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Etat</li>
-                        <li><a href="#">order.etat</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Prix Total</li>
-                        <li><a href="#">order.prixTotal</a></li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.etat}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Jour Reservation</li>
-                        <li><a href="#">order.jourReservation</a></li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.numbreDaysReserved}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Date Debut</li>
-                        <li><a href="#">order.dateDebut</a></li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.startDate | date: 'dd/MM/yyyy'}}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Date Fin</li>
-                        <li><a href="#">order.dateFin</a></li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.endDate | date: 'dd/MM/yyyy'}}</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Prix Total</li>
+                        <li *ngFor="let order of orders"><a routerLink="/orderDetails/{{order.id}}">{{order.total}} DH</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Actions</li>
-                        <li>
+                        <li *ngFor="let order of orders">
                             <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-pen"></i></a>
                             <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-trash"></i></a>
                         </li>
