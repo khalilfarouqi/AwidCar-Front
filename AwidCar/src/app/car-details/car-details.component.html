@@ -2,9 +2,56 @@
     <div class="home-content">
         <div class="sales-boxes">
             <div class="recent-sales box">
-                <div class="title">carDetails Recent Cars</div>
                 <div class="sales-details">
-
+                    <div class="box">
+                        <div class="images">
+                            <div class="img-holder active">
+                                <img src="{{ cars.photo.photo1 }}">
+                            </div>
+                            <div class="img-holder">
+                                <img src="{{ cars.photo.photo2 }}">
+                            </div>
+                            <div class="img-holder">
+                                <img src="{{ cars.photo.photo3 }}">
+                            </div>
+                            <div class="img-holder">
+                                <img src="{{ cars.photo.photo4 }}">
+                            </div>
+                        </div>
+                        <div class="basic-info">
+                            <h1>{{ cars.name }}</h1>
+                            <div class="rate">
+                                <i *ngFor="let star of starList" class="{{star}}"></i>
+                            </div>
+                            <span>{{ cars.price }} DH</span>
+                        </div>
+                        <div class="description">
+                            <ul class="features">
+                                <li><i></i>{{ cars.brande }}</li>
+                                <li><i></i>BootSize : {{ cars.bootSize }}</li>
+                                <li><i></i>GearBox : {{ cars.gearBox }}</li>
+                                <li><i></i>Mileage : {{ cars.mileage }}</li>
+                                <li><i></i>Model : {{ cars.model }}</li>
+                                <li><i></i>HorsPower : {{ cars.horsPower }}</li>
+                                <li><i></i>Consumption : {{ cars.consumption }}</li>
+                                <li><i></i>Fuel : {{ cars.fuel }}</li>
+                                <li><i></i>Seat : {{ cars.seat }}</li>
+                                <li><i></i>Door : {{ cars.door }}</li>
+                                <li><i></i>Style : {{ cars.style }}</li>
+                                <li>immatriculation : {{ cars.immatriculation.prefectureRef.code }} | {{ cars.immatriculation.series }} | {{ cars.immatriculation.carNumber }}</li>
+                                <li>----------- Assurence : -----------</li>
+                                <li><i *ngIf="cars.cdm == true" class="bi bi-shield">cdm</i></li>
+                                <li><i *ngIf="cars.protectionVol == true" class="bi bi-shield">protection Vol</i></li>
+                                <li><i *ngIf="cars.respoCivile == true" class="bi bi-shield">respo Civile</i></li>
+                                <li><i *ngIf="cars.brisGlacePneus == true" class="bi bi-shield">bris Glace Pneus</i></li>
+                                <li>--------------------------------------</li>
+                            </ul>
+                            <ul class="social">
+                                <li><i *ngIf="cars.bluetooth == true" class="bi bi-bluetooth"></i></li>
+                                <li><i *ngIf="cars.airBag == true" class="bi bi-bag"></i></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
