@@ -11,6 +11,7 @@ import { CarEditeurComponent } from './car-editeur/car-editeur.component';
 import { SettingComponent } from './setting/setting.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { NotificationDetailComponent } from './notification-detail/notification-detail.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: "setting", component: SettingComponent},
   {path: "carEditeur", component: CarEditeurComponent},
   {path: "carDetails/:id", component: CarDetailsComponent},
-  {path: "orderDetails/:id", component: OrderDetailsComponent}
+  {path: "orderDetails/:id", component: OrderDetailsComponent},
+  {path: "notificationDetails/:id", component: NotificationDetailComponent}
 ];
 
 @NgModule({

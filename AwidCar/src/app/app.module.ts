@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
+import { NotificationDetailComponent } from './notification-detail/notification-detail.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +43,12 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
     SettingComponent,
     CarEditeurComponent,
     CarDetailsComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    NotificationDetailComponent
   ],
   imports: [
     BrowserModule,
+    DatePipe,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
