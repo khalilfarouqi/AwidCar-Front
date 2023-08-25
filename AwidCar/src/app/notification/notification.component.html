@@ -6,31 +6,23 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">Object</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let notification of notifications"><a routerLink="/notificationDetails/{{notification.id}}">{{ notification.object }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Body</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let notification of notifications"><a routerLink="/notificationDetails/{{notification.id}}">{{ notification.body }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Notification Type</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let notification of notifications"><a routerLink="/notificationDetails/{{notification.id}}">{{ notification.notificationType }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Notification Web</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let notification of notifications"><a routerLink="/notificationDetails/{{notification.id}}">{{ notification.notificationWeb }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Date Envoy</li>
-                        <li><a href="#">XXXXX</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Is Read</li>
-                        <li><a href="#">XXXXX</a></li>
-                    </ul>
-                    <ul class="details">
-                        <li class="topic">Client Name</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let notification of notifications"><a routerLink="/notificationDetails/{{notification.id}}">{{ notification.dateEnvoi }}</a></li>
                     </ul>
                 </div>
             </div>
