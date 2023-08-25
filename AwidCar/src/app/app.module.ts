@@ -27,6 +27,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { NotificationDetailComponent } from './notification-detail/notification-detail.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NotificationDetailComponent } from './notification-detail/notification-
     CarEditeurComponent,
     CarDetailsComponent,
     OrderDetailsComponent,
-    NotificationDetailComponent
+    NotificationDetailComponent,
+    ClientDetailsComponent
   ],
   imports: [
     BrowserModule,

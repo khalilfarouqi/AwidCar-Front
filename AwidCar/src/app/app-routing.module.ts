@@ -12,6 +12,7 @@ import { SettingComponent } from './setting/setting.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { NotificationDetailComponent } from './notification-detail/notification-detail.component';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 
 const routes: Routes = [
   {path: "home", component: HomeComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: "carEditeur", component: CarEditeurComponent},
   {path: "carDetails/:id", component: CarDetailsComponent},
   {path: "orderDetails/:id", component: OrderDetailsComponent},
-  {path: "notificationDetails/:id", component: NotificationDetailComponent}
+  {path: "notificationDetails/:id", component: NotificationDetailComponent},
+  {path: "clientDetails/:id", component: ClientDetailsComponent}
 ];
 
 @NgModule({
