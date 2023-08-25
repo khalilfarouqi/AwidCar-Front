@@ -6,17 +6,17 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">User Name</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let user of users"><a>{{ user.userName }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Last CheckIn</li>
-                        <li><a href="#">XXXXX</a></li>
+                        <li *ngFor="let user of users"><a>{{ user.lastCheckIn }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">PassWord</li>
-                        <li>
-                            <a href="#">XXXXX   </a>
-                            <a href=""><i class="bi bi-eye"></i></a>
+                        <li *ngFor="let user of users">
+                            <a>{{ user.passWord }} </a>
+                            <a><i class="bi bi-eye"></i></a>
                         </li>
                     </ul>
                 </div>
