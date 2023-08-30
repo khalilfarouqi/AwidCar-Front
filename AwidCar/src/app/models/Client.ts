@@ -3,6 +3,7 @@ import { City } from "../enums/city.enum";
 
 export interface Client {
     id?: number;
+	Image: string;
 	FirstName: string;
 	LastName: string;
 	Gender: Gender;

@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Client } from '../models/Client';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,5 +13,9 @@ export class ClientService {
   
   getAllClient() {
     return this.http.get(`${this.apiUrl}/getAll`);
+  }
+
+  getClientById(id: number): Observable<Client> {
+    return this.http.get<Client>(`${this.apiUrl}/` + id);
   }
 }

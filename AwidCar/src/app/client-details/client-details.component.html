@@ -5,31 +5,31 @@
                 <div class="sales-details">
                     <ul>
                         <li><div class="title">Personal Info</div></li>
-                        <li><a>Image : </a></li>
-                        <li><a>First Name : </a></li>
-                        <li><a>Last Name : </a></li>
-                        <li><a>Gender : </a></li>
-                        <li><a>Age : </a></li>
-                        <li><a>Adress : </a></li>
-                        <li><a>City : </a></li>
-                        <li><a>Country : </a></li>
-                        <li><a>CIN : </a></li>
+                        <li><img src="{{ clients.image }}"></li>
+                        <li><a>First Name : {{ clients.firstName }}</a></li>
+                        <li><a>Last Name : {{ clients.lastName }}</a></li>
+                        <li><a>Gender : {{ clients.gender }}</a></li>
+                        <li><a>Age : {{ clients.age }}</a></li>
+                        <li><a>Adress : {{ clients.adress }}</a></li>
+                        <li><a>City : {{ clients.city }}</a></li>
+                        <li><a>Country : {{ clients.country }}</a></li>
+                        <li><a>CIN : {{ clients.cin }}</a></li>
                     </ul>
                 </div>
                 <div class="sales-details">
                     <ul>
                         <li><div class="title">Contact info</div></li>
-                        <li><a>Tel : </a></li>
-                        <li><a>Email : </a></li>
+                        <li><a>Tel : {{ clients.tel }}</a></li>
+                        <li><a>Email : {{ clients.email }}</a></li>
                     </ul>
                 </div>
                 <div class="sales-details">
                     <ul>
                         <li><div class="title">Licence Info</div></li>
-                        <li><a>Licence : </a></li>
-                        <li><a>VolNumbre : </a></li>
-                        <li><a>Date Licence : </a></li>
-                        <li><a>Date Creation : </a></li>
+                        <li><a>Licence : {{ clients.licence }}</a></li>
+                        <li><a>VolNumbre : {{ clients.volNumbre }}</a></li>
+                        <li><a>Date Licence : {{ clients.dateLicence }}</a></li>
+                        <li><a>Date Creation : {{ clients.dateCreation }}</a></li>
                     </ul>
                 </div>
             </div>
