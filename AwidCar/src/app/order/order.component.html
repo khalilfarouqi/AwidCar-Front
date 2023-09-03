@@ -36,7 +36,7 @@
                         <li class="topic">Actions</li>
                         <li *ngFor="let order of orders">
                             <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-pen"></i></a>
-                            <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-trash"></i></a>
+                            <a style="margin: 0px 5px 0px 5px;"><i class="bi bi-trash" (click)="deleteOrder(order.id)"></i></a>
                         </li>
                     </ul>
                 </div>

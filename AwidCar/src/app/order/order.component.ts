@@ -22,4 +22,11 @@ export class OrderComponent implements OnInit {
     })
   }
 
+  public deleteOrder(id :number) {
+    this.orderService.deleteOrder(id).subscribe(data =>{
+      console.log(data);
+    })
+    this.getOrder();
+  }
+
 }
