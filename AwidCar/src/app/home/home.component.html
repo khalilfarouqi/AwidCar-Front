@@ -37,23 +37,23 @@
                 <div class="sales-details">
                     <ul class="details">
                         <li class="topic">Full Name</li>
-                        <li *ngFor="let client of clients"><a href="">{{ client.firstName }} {{ client.lastName }}</a></li>
+                        <li *ngFor="let client of clients"><a routerLink="/clientDetails/{{client.id}}">{{ client.firstName }} {{ client.lastName }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">CIN</li>
-                        <li *ngFor="let client of clients"><a href="">{{ client.cin }}</a></li>
+                        <li *ngFor="let client of clients"><a routerLink="/clientDetails/{{client.id}}">{{ client.cin }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Phone Number</li>
-                        <li *ngFor="let client of clients"><a href="">{{ client.tel }}</a></li>
+                        <li *ngFor="let client of clients"><a routerLink="/clientDetails/{{client.id}}">{{ client.tel }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">Licence</li>
-                        <li *ngFor="let client of clients"><a href="">{{ client.licence }}</a></li>
+                        <li *ngFor="let client of clients"><a routerLink="/clientDetails/{{client.id}}">{{ client.licence }}</a></li>
                     </ul>
                     <ul class="details">
                         <li class="topic">City</li>
-                        <li *ngFor="let client of clients"><a href="">{{ client.city }}</a></li>
+                        <li *ngFor="let client of clients"><a routerLink="/clientDetails/{{client.id}}">{{ client.city }}</a></li>
                     </ul>
                 </div>
                 <div class="button">
@@ -63,16 +63,10 @@
             <div class="top-sales box">
                 <div class="title">Top Orders</div>
                 <ul class="top-sales-details">
-                    <li>
-                        <a href="">
-                            <span class="product" *ngFor="let order of orders">{{order.client.fullName}}</span>
-                        </a>
-                        <a href="">
-                            <span class="price" *ngFor="let order of orders">{{order.car.name}}</span>
-                        </a>
-                        <a href="">
-                            <span class="price" *ngFor="let order of orders">{{order.etat}}</span>
-                        </a>
+                    <li *ngFor="let order of orders">
+                        <a routerLink="/orderDetails/{{order.id}}"><span class="product">{{order.client.firstName}} {{order.client.lastName}}</span></a>
+                        <a routerLink="/orderDetails/{{order.id}}"><span class="price">{{order.car.name}}</span></a>
+                        <a routerLink="/orderDetails/{{order.id}}"><span class="price">{{order.etat}}</span></a>
                     </li>
                 </ul>
             </div>
