@@ -2,8 +2,65 @@
     <div class="home-content">
         <div class="sales-boxes">
             <div class="recent-sales box">
-                <div class="title">Order Editeur</div>
                 <div class="sales-details">
+                    <ul>
+                        <li><div class="title">Client info</div></li>
+                        <li><img class="imageClient" src="{{ orders?.client?.image }}"></li>
+                        <li><a>Name : {{ orders?.client?.firstName }} {{ orders?.client?.lastName }}</a></li>
+                        <li><a>Adress : {{ orders?.client?.adress ?? '---' }}</a></li>
+                        <li><a>City : {{ orders?.client?.city ?? '---' }}</a></li>
+                        <li><a>Country : {{ orders?.client?.country ?? '---' }}</a></li>
+                        <li><a>Tel : {{ orders?.client?.tel ?? '---' }}</a></li>
+                        <li><a>Email : {{ orders?.client?.email ?? '---' }}</a></li>
+                    </ul>
+                </div>
+                <div class="sales-details">
+                    <ul>
+                        <li><div class="title">Car info</div></li>
+                        <li><img class="imageCar" src="{{ orders.car.photo.photo1 }}"></li>
+                        <li><a>Car : {{ orders.car.brande }} {{ orders.car.name }} {{ orders.car.model }}</a></li>
+                        <li><a>Mileage : {{ orders?.car?.mileage ?? '---' }}</a></li>
+                        <li><a>immatriculation : {{ orders.car.immatriculation.carNumber }} | {{ orders.car.immatriculation.series }} | {{ orders.car.immatriculation.prefectureRef.code }}</a></li>
+                    </ul>
+                </div>
+                <div class="sales-details">
+                    <ul>
+                        <li><div class="title">Order info</div></li>
+                        <li><a>Country : {{ orders.country }}</a></li>
+                        <li><a>Booking City : {{ orders.bookingCity }}</a></li>
+                        <li><a>Return City : {{ orders.returnCity }}</a></li>
+                        <li><a>Type Insurance : {{ orders.typeInsurance }}</a></li>
+                    </ul>
+                </div>
+                <div class="sales-details">
+                    <ul class="details">
+                        <li class="topic">Etat</li>
+                        <li><a>{{ orders.etat }}</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Status</li>
+                        <li><a>{{ orders.orderStatus }}</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Price</li>
+                        <li><a>{{ orders.car.price }} DH</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Start Date</li>
+                        <li><a>{{ orders.startDate }}</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">End Date</li>
+                        <li><a>{{ orders.endDate }}</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Days</li>
+                        <li><a>{{ orders.numbreDaysReserved }}</a></li>
+                    </ul>
+                    <ul class="details">
+                        <li class="topic">Total</li>
+                        <li><a>{{ orders.total }} DH</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
