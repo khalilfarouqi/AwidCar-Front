@@ -28,6 +28,9 @@ import { CarDetailsComponent } from './car-details/car-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { NotificationDetailComponent } from './notification-detail/notification-detail.component';
 import { ClientDetailsComponent } from './client-details/client-details.component';
+import { ImmatriculationPopupComponent } from './immatriculation-popup/immatriculation-popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
     CarDetailsComponent,
     OrderDetailsComponent,
     NotificationDetailComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    ImmatriculationPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,9 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
     MatCheckboxModule,
     ReactiveFormsModule,
     MatStepperModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
