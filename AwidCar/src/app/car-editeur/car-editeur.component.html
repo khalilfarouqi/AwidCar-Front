@@ -3,184 +3,177 @@
         <div class="sales-boxes">
             <div class="recent-sales box">
                 <div class="title">Cars Editeur</div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">Name:</label>
-                        <input type="text" class="form-control" id="exampleInput" placeholder="Enter something">
+                <form [formGroup]="formData">
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="name">Name : </label>
+                            <input type="text" class="form-control" placeholder="Enter something" name="name" formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="brande">Brande : </label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" matNativeControl formControlName="brande">
+                                    <option selected>Choose...</option>
+                                    <option *ngFor="let brande of brandes" [value]="brande">{{ brande }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" min="2010" max="2050" name="model" formControlName="model">
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" min="2010" max="2050" name="model" formControlName="model">
+                        </div>
+                        <div class="form-group">
+                            <mat-button-toggle class="large-button" (click)="openImmatriculationPopup()">Immatriculation</mat-button-toggle>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Brande:</label>
-                        <div class="input-group mb-3">
-                            <select class="custom-select" id="inputGroupSelect02" matNativeControl required [(ngModel)]="formData.Brande">
-                                <option selected>Choose...</option>
-                                <option *ngFor="let brande of brandes" [value]="brande">{{ brande }}</option>
-                            </select>
-                            <div class="input-group-append">
-                              <label class="input-group-text" for="inputGroupSelect02">Brande</label>
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="horspower">Hors Power : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" name="horsePower" formControlName="horsPower">
+                        </div>
+                        <div class="form-group">
+                            <label for="style">Style : </label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" matNativeControl formControlName="style">
+                                    <option selected>Choose...</option>
+                                    <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mileage">Mileage : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" name="mileage" formControlName="mileage">
+                        </div>
+                    </div>
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="consumption">Consumption : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" name="consumption" formControlName="consumption">
+                        </div>
+                        <div class="form-group">
+                            <label for="bootsize">Boot Size : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" name="bootsize" formControlName="bootSize">
+                        </div>
+                        <div class="form-group">
+                            <label for="bluetooth">Bluetooth : </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" name="bluetooth" formControlName="bluetooth">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="airbag">AirBag : </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" name="airbag" formControlName="airBag">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Model:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something" min="2010" max="2050">
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="gearbox">GearBox : </label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" matNativeControl formControlName="gearBox">
+                                    <option selected>Choose...</option>
+                                    <option *ngFor="let gearbox of gearboxs" [value]="gearbox">{{ gearbox }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="fuel">Fuel : </label>
+                            <div class="input-group mb-3">
+                                <select class="custom-select" matNativeControl formControlName="fuel">
+                                    <option selected>Choose...</option>
+                                    <option *ngFor="let fuel of fuels" [value]="fuel">{{ fuel }}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="seat">Seat : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" name="seat" formControlName="seat">
+                        </div>
+                        <div class="form-group">
+                            <label for="door">Door : </label>
+                            <input type="number" class="form-control" placeholder="Enter something" name="door" formControlName="door">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Immatriculation:</label>
-                        <input type="text" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                </div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">Hors Power:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Style:</label>
-                        <div class="input-group mb-3">
-                            <select class="custom-select" id="inputGroupSelect02" matNativeControl required>
-                                <option selected>Choose...</option>
-                                <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
-                            </select>
-                            <div class="input-group-append">
-                              <label class="input-group-text" for="inputGroupSelect02">Style</label>
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="price">Price : </label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" formControlName="price">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"> DH </span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Mileage:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                </div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">Consumption:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Boot Size:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Bluetooth:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                              </div>
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="cdm">CDM : </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" formControlName="cdm">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="protectionvolle">Protection Volle : </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" formControlName="protectionVol">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="respocivile">Respo Civile : </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" formControlName="respoCivile">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="brisglacepneus">Bris Glace Pneus : </label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="checkbox" aria-label="Checkbox for following text input" formControlName="brisGlacePneus">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInput">AirBag:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                              </div>
-                            </div>
+                    <div class="sales-details">
+                        <div class="form-group">
+                            <label for="photo">Photo : </label>
+                            <input type="file" class="form-control" name="photo">
+                            <input type="file" class="form-control" name="photo">
+                            <input type="file" class="form-control" name="photo">
+                            <input type="file" class="form-control" name="photo">
                         </div>
                     </div>
-                </div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">GearBox:</label>
-                        <div class="input-group mb-3">
-                            <select class="custom-select" id="inputGroupSelect02" matNativeControl required>
-                                <option selected>Choose...</option>
-                                <option *ngFor="let gearbox of gearboxs" [value]="gearbox">{{ gearbox }}</option>
-                            </select>
-                            <div class="input-group-append">
-                              <label class="input-group-text" for="inputGroupSelect02">GearBox</label>
-                            </div>
-                        </div>
+                    <div class="button">
+                        <a routerLink="/car" routerLinkActive="active" style="background: #da1818; margin-right: 10px;">Cancel</a>
+                        <a routerLinkActive="active" (click)="MethodePost()">Save</a>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Fuel:</label>
-                        <div class="input-group mb-3">
-                            <select class="custom-select" id="inputGroupSelect02" matNativeControl required>
-                                <option selected>Choose...</option>
-                                <option *ngFor="let fuel of fuels" [value]="fuel">{{ fuel }}</option>
-                            </select>
-                            <div class="input-group-append">
-                              <label class="input-group-text" for="inputGroupSelect02">Fuel</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Seat:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Door:</label>
-                        <input type="number" class="form-control" id="exampleInput" placeholder="Enter something">
-                    </div>
-                </div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">Price:</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
-                            <div class="input-group-append">
-                              <span class="input-group-text"> DH </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">CDM:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Protection Volle:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Respo Civile:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInput">Bris Glace Pneus:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <input type="checkbox" aria-label="Checkbox for following text input">
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="sales-details">
-                    <div class="form-group">
-                        <label for="exampleInput">Photo:</label>
-                        <input type="file" class="form-control" id="exampleInput">
-                        <input type="file" class="form-control" id="exampleInput">
-                        <input type="file" class="form-control" id="exampleInput">
-                        <input type="file" class="form-control" id="exampleInput">
-                    </div>
-                </div>
-                <div class="button">
-                    <a routerLink="/car" routerLinkActive="active" style="background: #da1818;">Cancel</a>
-                    <a routerLinkActive="active">Save</a>
-                </div>
+                </form>
             </div>
         </div>
     </div>
