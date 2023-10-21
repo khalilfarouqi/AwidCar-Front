@@ -1,0 +1,22 @@
+<div class="pop-up">
+    <h2 mat-dialog-title>Immatriculation de voiture</h2>
+    <mat-dialog-content>
+        <form [formGroup]="immatriculationForm">
+            <mat-form-field class="mffStyle">
+                <input type="number" matInput formControlName="immatriculation" placeholder="13456">
+            </mat-form-field>
+            <mat-form-field class="mffStyle">
+                <select matNativeControl>
+                    <option *ngFor="let gearbox of series" [value]="gearbox">{{ gearbox }}</option>
+                </select>
+            </mat-form-field>
+            <mat-form-field class="mffStyle">
+                <input type="number" matInput formControlName="immatriculation" placeholder="33" min="1" max="89">
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <mat-button-toggle [mat-dialog-close]="false" style="color: #da1818;">Cancel</mat-button-toggle>
+        <mat-button-toggle [mat-dialog-close]="immatriculationForm.value" cdkFocusInitial style="color: #0d3073;">Submit</mat-button-toggle>
+    </mat-dialog-actions>
+</div>
