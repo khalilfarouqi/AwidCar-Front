@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from '../service/car.service';
-import { Brande } from '../enums/Brande.enum';
 
 @Component({
   selector: 'app-car',
@@ -10,7 +9,6 @@ import { Brande } from '../enums/Brande.enum';
 export class CarComponent implements OnInit {
 
   cars: any = [];
-  router: any;
 
   constructor(private carService: CarService) { 
   }
