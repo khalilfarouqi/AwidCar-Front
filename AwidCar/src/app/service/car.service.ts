@@ -29,7 +29,6 @@ export class CarService {
   }
 
   postData(data: Car): Observable<Car> {
-    // Send POST request to the server
     return this.http.post<Car>(this.apiUrl, data);
   }
 
