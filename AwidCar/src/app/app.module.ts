@@ -31,6 +31,7 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import { ImmatriculationPopupComponent } from './immatriculation-popup/immatriculation-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatStepperModule,
     MatDatepickerModule,
     MatDialogModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
