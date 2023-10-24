@@ -1,22 +1,22 @@
 <div class="pop-up">
     <h2 mat-dialog-title>Immatriculation de voiture</h2>
     <mat-dialog-content>
-        <form [formGroup]="immatriculationForm">
+        <form [formGroup]="formData">
             <mat-form-field class="mffStyle">
-                <input type="number" matInput formControlName="immatriculation" placeholder="13456">
+                <input type="number" matInput formControlName="carNumber" placeholder="13456">
             </mat-form-field>
             <mat-form-field class="mffStyle">
-                <select matNativeControl>
+                <select matNativeControl formControlName="series">
                     <option *ngFor="let gearbox of series" [value]="gearbox">{{ gearbox }}</option>
                 </select>
             </mat-form-field>
             <mat-form-field class="mffStyle">
-                <input type="number" matInput formControlName="immatriculation" placeholder="33" min="1" max="89">
+                <input type="number" matInput formControlName="prefectureRef" placeholder="33" min="1" max="89">
             </mat-form-field>
         </form>
     </mat-dialog-content>
     <mat-dialog-actions>
         <mat-button-toggle [mat-dialog-close]="false" style="color: #da1818;">Cancel</mat-button-toggle>
-        <mat-button-toggle [mat-dialog-close]="immatriculationForm.value" cdkFocusInitial style="color: #0d3073;">Submit</mat-button-toggle>
+        <mat-button-toggle [mat-dialog-close]="formData.value" cdkFocusInitial style="color: #0d3073;" (click)="MethodePost()">Submit</mat-button-toggle>
     </mat-dialog-actions>
 </div>
