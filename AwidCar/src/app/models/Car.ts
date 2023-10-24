@@ -2,7 +2,6 @@ import { Brande } from "../enums/Brande.enum";
 import { Fuel } from "../enums/Fuel.enum";
 import { GearBox } from "../enums/GearBox.enum";
 import { Style } from "../enums/Style.enum";
-import { Photo } from "./Photo";
 
 export interface Car {
     id?: number;
@@ -11,6 +10,9 @@ export interface Car {
 	Matricule: string;
 	Mileage: number;
 	Model: number;
+	immatriculation: {
+        id: number;
+    };
 	HorsPower: number;
 	Consumption: number;
 	fuel: Fuel;
