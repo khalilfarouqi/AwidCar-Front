@@ -80,7 +80,6 @@ export class CarEditeurComponent implements OnInit {
   
   MethodePost() {
     const formDataValue = this.formData.value;
-  
     this.immatriculationService.getLastCarId().subscribe((result) => {
       formDataValue.immatriculation = result;
       const postData = {
@@ -89,31 +88,9 @@ export class CarEditeurComponent implements OnInit {
           id: result,
         }
       };
-  
-      this.carService.postData(postData)
-        .pipe(
-          catchError((error) => {
-            if (error.status === 400) {
-              this.showErrorAlert(error.error);
-            }
-            throw error;
-          })
-        )
-        .subscribe(
-          () => {
-            this.router.navigate(['/car']);
-          },
-          (error) => {
-            // Handle other error cases here if needed
-          }
-        );
-    });
-  }
-  
-  showErrorAlert(message: string) {
-    this.snackBar.open(message, 'Close', {
-      duration: 5000,
-      panelClass: ['error-alert'],
+      this.carService.postData(postData).subscribe((item) => {
+        this.router.navigate(['/car']);
+      });
     });
   }
   
@@ -122,7 +99,16 @@ export class CarEditeurComponent implements OnInit {
       width: '250px',
       data: {}
     });
-    return dialogRef.afterClosed().toPromise();
+    return new Promise<Immatriculation>((resolve, reject) => {
+      dialogRef.afterClosed().subscribe((result: Immatriculation) => {
+        alert(result);
+        if (result) {
+          resolve(result);
+        } else {
+          reject('Dialog closed with no result or with an error');
+        }
+      });
+    });
   }
 
   brandes = Object.values(Brande);
