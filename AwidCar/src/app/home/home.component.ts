@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../service/client.service';
 import { OrderService } from '../service/order.service';
+import { CarService } from '../service/car.service';
 
 @Component({
   selector: 'app-home',
@@ -15,11 +16,13 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private clientService: ClientService) { }
+    private clientService: ClientService,
+    private carService: CarService) { }
 
   ngOnInit(): void {
     this.getOrder();
     this.getClient();
+    this.getCar();
   }
 
   public getClient(){
@@ -30,9 +33,15 @@ export class HomeComponent implements OnInit {
   }
 
   public getOrder(){
-    this.orderService.getAllOrder()
-    .subscribe((result) => {
+    this.orderService.getAllOrder().subscribe((result) => {
       this.orders = result;
+      console.log(result)
+    })
+  }
+
+  public getCar(){
+    this.carService.getAllCar().subscribe((result) => {
+      this.cars = result;
       console.log(result)
     })
   }
