@@ -16,13 +16,13 @@ import { NotificationComponent } from './notification/notification.component';
 import { UserComponent } from './user/user.component';
 import { SettingComponent } from './setting/setting.component';
 import { HttpClientModule } from '@angular/common/http';
-import {MatInputModule} from '@angular/material/input';
-import {NgFor} from '@angular/common';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { NgFor } from '@angular/common';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { CarEditeurComponent } from './car-editeur/car-editeur.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
@@ -32,6 +32,7 @@ import { ImmatriculationPopupComponent } from './immatriculation-popup/immatricu
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PhotoPopupComponent } from './photo-popup/photo-popup.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     OrderDetailsComponent,
     NotificationDetailComponent,
     ClientDetailsComponent,
-    ImmatriculationPopupComponent
+    ImmatriculationPopupComponent,
+    PhotoPopupComponent
   ],
   imports: [
     BrowserModule,
