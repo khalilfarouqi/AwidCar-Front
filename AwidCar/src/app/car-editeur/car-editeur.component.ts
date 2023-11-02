@@ -6,12 +6,14 @@ import { GearBox } from '../enums/GearBox.enum';
 import { Style } from '../enums/Style.enum';
 import { CarService } from '../service/car.service';
 import { ImmatriculationService } from '../service/immatriculation.service';
+import { PhotoPopupService } from '../service/photo-popup.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ImmatriculationPopupComponent } from '../immatriculation-popup/immatriculation-popup.component';
 import { Immatriculation } from '../models/Immatriculation';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { catchError } from 'rxjs/operators';
+import { PhotoPopupComponent } from '../photo-popup/photo-popup.component';
+import { Photo } from '../models/Photo';
 
 @Component({
   selector: 'app-car-editeur',
@@ -24,6 +26,7 @@ export class CarEditeurComponent implements OnInit {
   constructor(private fb: FormBuilder, 
     private carService: CarService, 
     private immatriculationService: ImmatriculationService, 
+    private photoPopupService: PhotoPopupService, 
     private router: Router, 
     public dialog: MatDialog,
     private snackBar: MatSnackBar) {
@@ -48,7 +51,8 @@ export class CarEditeurComponent implements OnInit {
       cdm: [false, Validators.required],
       protectionVol: [false, Validators.required],
       respoCivile: [false, Validators.required],
-      brisGlacePneus: [false, Validators.required]
+      brisGlacePneus: [false, Validators.required],
+      photo: [0, Validators.required]
     });
   }
   
@@ -74,22 +78,34 @@ export class CarEditeurComponent implements OnInit {
       cdm: [false, Validators.required],
       protectionVol: [false, Validators.required],
       respoCivile: [false, Validators.required],
-      brisGlacePneus: [false, Validators.required]
+      brisGlacePneus: [false, Validators.required],
+      photo: [0, Validators.required]
     });
   }
   
   MethodePost() {
     const formDataValue = this.formData.value;
-    this.immatriculationService.getLastCarId().subscribe((result) => {
-      formDataValue.immatriculation = result;
-      const postData = {
-        ...formDataValue,
-        immatriculation: {
-          id: result,
+    
+    this.immatriculationService.getLastCarId().subscribe((resultImm) => {
+      formDataValue.immatriculation = resultImm;
+      this.photoPopupService.getLastPhotoId().subscribe((resultPhotoId) => {
+        formDataValue.photo = resultPhotoId;
+        if (resultPhotoId && resultImm) {
+          const postData = {
+            ...formDataValue,
+            immatriculation: {
+              id: resultImm,
+            },
+            photo: {
+              id: resultPhotoId,
+            }
+          };
+          this.carService.postData(postData).subscribe((item) => {
+            this.router.navigate(['/car']);
+          });
+        } else {
+          
         }
-      };
-      this.carService.postData(postData).subscribe((item) => {
-        this.router.navigate(['/car']);
       });
     });
   }
@@ -100,16 +116,32 @@ export class CarEditeurComponent implements OnInit {
       data: {}
     });
     return new Promise<Immatriculation>((resolve, reject) => {
-      dialogRef.afterClosed().subscribe((result: Immatriculation) => {
-        alert(result);
-        if (result) {
-          resolve(result);
+      dialogRef.afterClosed().subscribe((resultImm: Immatriculation) => {
+        alert(resultImm);
+        if (resultImm) {
+          resolve(resultImm);
         } else {
           reject('Dialog closed with no result or with an error');
         }
       });
     });
   }
+  
+  openPhotoPopup(): Promise<Photo> {
+    const dialogRef = this.dialog.open(PhotoPopupComponent, {
+      width: '250px',
+      data: {}
+    });
+    return new Promise<Photo>((resolve, reject) => {
+      dialogRef.afterClosed().subscribe((resultPhoto: Photo) => {
+        if (resultPhoto) {
+          resolve(resultPhoto);
+        } else {
+          reject('Dialog closed with no result or with an error');
+        }
+      });
+    });
+  }  
 
   brandes = Object.values(Brande);
   fuels = Object.values(Fuel);
