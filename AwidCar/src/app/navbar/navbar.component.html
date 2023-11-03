@@ -1,17 +1,21 @@
 <section class="home-section">
     <nav>
         <div class="sidebar-button">
-            <i class='bx bx-menu sidebarBtn'></i>
+            <i class="bx bx-menu sidebarBtn"></i>
             <span class="dashboard">Dashboard</span>
         </div>
         <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <i class='bx bx-search' ></i>
+            <input type="text" placeholder="Search..." (input)="getSearch(inputField.value)" [(ngModel)]="label" #inputField>
+            <a class="bx bx-search" routerLinkActive="active" (click)="getSearch(inputField.value)"></a>
+        </div>
+        <div *ngIf="searchs" class="custom-dropdown">
+            <ul class="dropdown-content">
+                <li *ngFor="let result of searchs">{{ result.value }}</li>
+            </ul>
         </div>
         <div class="profile-details">
-            <!--<img src="images/profile.jpg" alt="">-->
             <span class="admin_name">Prem Shahi</span>
-            <i class='bx bx-chevron-down' ></i>
+            <i class="bx bx-chevron-down"></i>
         </div>
     </nav>
 </section>
