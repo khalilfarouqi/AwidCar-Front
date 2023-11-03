@@ -15,8 +15,9 @@
                     <ul class="details">
                         <li class="topic">PassWord</li>
                         <li *ngFor="let user of users">
-                            <a>{{ user.passWord }} </a>
-                            <a><i class="bi bi-eye"></i></a>
+                            <a *ngIf="showPassword; else maskedPassword">{{ user.passWord }}  </a>
+                            <ng-template #maskedPassword>*********  </ng-template>
+                            <a (click)="togglePasswordVisibility()"><i class="bi bi-eye"></i></a>
                         </li>
                     </ul>
                 </div>

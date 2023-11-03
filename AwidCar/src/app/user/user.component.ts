@@ -11,6 +11,7 @@ export class UserComponent implements OnInit{
   constructor(private userService: UserService) { }
 
   users: any = [];
+  showPassword = false;
 
   ngOnInit(): void {
     this.getUser();
@@ -21,6 +22,10 @@ export class UserComponent implements OnInit{
       this.users = result;
       console.log(result)
     })
+  }
+  
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 
 }
