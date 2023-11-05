@@ -1,1 +1,46 @@
-<p>setting works!</p>
+<section class="home-section">
+    <div class="home-content">
+        <div class="sales-boxes">
+            <div class="recent-sales box">
+                <div class="sales-details">
+                    <div class="container p-0">
+                        <h1 class="h3 mb-3">Settings</h1>
+                        <div class="row">
+                            <div class="col-md-7 col-xl-8">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="account" role="tabpanel">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form #settingsForm="ngForm" (ngSubmit)="MethodePost(users.id, users.passWord, settingsForm)">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputFirstName">User name</label>
+                                                            <input name="UserName" value="{{users.userName}}" type="text" class="form-control" id="inputFirstName" [(ngModel)]="formData.userName">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputLastName">Current Password</label>
+                                                            <input name="CurrentPassword" type="password" class="form-control" id="inputLastName" placeholder="Current Password">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputLastName">New Password</label>
+                                                            <input name="NewPassword" type="password" class="form-control" id="inputLastName" placeholder="New Password">
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="inputLastName">Confirm Password</label>
+                                                            <input  name="PassWord" type="password" class="form-control" id="inputLastName" placeholder="Confirm Password" [(ngModel)]="formData.passWord">
+                                                        </div>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
