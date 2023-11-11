@@ -32,7 +32,6 @@ export class SettingComponent implements OnInit {
   MethodePost(id: number, currentPassword: string, form: NgForm) {
     if (form.valid) {
       if (form.value.newPassword == form.value.confirmPassword) {
-        console
         this.userService.existsPassWord(id, currentPassword).subscribe((passwordExists: boolean) => {
           if (passwordExists) {
             this.formData.id = id;
